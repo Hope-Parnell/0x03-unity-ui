@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     bool right=false, left=false, forward=false, back=false;
     private int score = 0;
+    public int health = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,10 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.tag == "Pickup"){
             score++;
+        }
+        if (other.tag == "Trap"){
+            health--;
+            Debug.Log($"Health: {health}");
         }
     }
 }
