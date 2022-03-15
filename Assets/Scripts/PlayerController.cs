@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody playerRb;
     public float speed;
     bool right=false, left=false, forward=false, back=false;
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +45,11 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(speed * 10 * Time.deltaTime, 0, 0);
         }
         forward = back = left = right = false;
+    }
+
+    void OnTriggerEnter(Collider other){
+        if (other.tag == "Pickup"){
+            score++;
+        }
     }
 }
