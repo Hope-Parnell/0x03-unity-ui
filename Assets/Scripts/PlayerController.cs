@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.tag == "Pickup"){
             score++;
+            Debug.Log($"Score: {score}");
         }
         if (other.tag == "Trap"){
             health--;
