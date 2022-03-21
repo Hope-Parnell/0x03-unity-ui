@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey("right")){
             right = true;
         }
+		if (Input.GetKey(KeyCode.Escape)){
+			SceneManager.LoadScene("menu");
+		}
     }
 
     void FixedUpdate(){
