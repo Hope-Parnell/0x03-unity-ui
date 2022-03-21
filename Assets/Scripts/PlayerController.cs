@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public Image winLose;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +69,12 @@ public class PlayerController : MonoBehaviour
             SetHealthText();
         }
         if (other.tag == "Goal"){
-            Debug.Log("You win!");
+            // Debug.Log("You win!");
+            Text wlt = winLose.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+            winLose.color = Color.green;
+            wlt.color = Color.black;
+            wlt.text = "You Win!";
+            winLose.gameObject.SetActive(true);
         }
     }
 	void SetScoreText() => scoreText.text = $"Score: {score}";
