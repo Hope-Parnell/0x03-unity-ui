@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     public void QuitMaze(){
         Debug.Log("Quit Game");
         #if (UNITY_WEBGL)
-            Application.OpenURL("https://github.com/Hope-Parnell/0x03-unity-ui");
+            SceneManager.LoadScene("WebQuit");
         #else
             Application.Quit();
         #endif
