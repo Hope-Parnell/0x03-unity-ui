@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     bool right=false, left=false, forward=false, back=false;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,8 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.tag == "Pickup"){
             score++;
-            Debug.Log($"Score: {score}");
+            // Debug.Log($"Score: {score}");
+            SetScoreText();
         }
         if (other.tag == "Trap"){
             health--;
@@ -65,5 +68,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Goal"){
             Debug.Log("You win!");
         }
+    }
+    void SetScoreText(){
+        scoreText.text = $"Score: {score}";
     }
 }
