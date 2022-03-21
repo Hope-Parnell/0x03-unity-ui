@@ -2115,6 +2115,7 @@ MonoBehaviour:
   health: 5
   scoreText: {fileID: 957659155}
   healthText: {fileID: 104561960}
+  winLose: {fileID: 109023893}
 --- !u!1001 &368268626
 PrefabInstance:
   m_ObjectHideFlags: 0

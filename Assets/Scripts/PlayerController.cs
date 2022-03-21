@@ -20,12 +20,22 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Game On!");
     }
 
+    IEnumerator LoadScene(float seconds){
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (health == 0){
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // Debug.Log("Game Over!");
+            Text winLoseText = winLose.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+            winLose.color = Color.red;
+            winLoseText.color = Color.white;
+            winLoseText.text = "Game Over!";
+            winLose.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
         if (Input.GetKey("w") || Input.GetKey("up")){
             forward = true;
@@ -70,11 +80,12 @@ public class PlayerController : MonoBehaviour
         }
         if (other.tag == "Goal"){
             // Debug.Log("You win!");
-            Text wlt = winLose.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+            Text winLoseText = winLose.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
             winLose.color = Color.green;
-            wlt.color = Color.black;
-            wlt.text = "You Win!";
+            winLoseText.color = Color.black;
+            winLoseText.text = "You Win!";
             winLose.gameObject.SetActive(true);
+			StartCoroutine(LoadScene(3));
         }
     }
 	void SetScoreText() => scoreText.text = $"Score: {score}";
