@@ -646,7 +646,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Analytics: 0
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -660,11 +667,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 3232d430-db78-48a9-9d3d-4095451787f0
+  cloudProjectId: f3296df0-1d99-47d0-a3bc-7e23c44f8d84
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: 0x02-unity-scripting
-  organizationId: carrie-ybay
+  organizationId: danketsutsuki
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   virtualTexturingSupportEnabled: 0
